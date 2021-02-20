@@ -5,7 +5,7 @@ import { CdkPipeline, SimpleSynthAction } from "@aws-cdk/pipelines";
 import * as apigw from '@aws-cdk/aws-apigateway';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as path from 'path';
-
+import * as codecommit from '@aws-cdk/aws-codecommit';
 /**
  * A stack for our simple Lambda-powered web service
  */
@@ -38,21 +38,19 @@ export class CdkpipelinesDemoStack extends Stack {
       */
     const sourceArtifact = new codepipeline.Artifact();
     const cloudAssemblyArtifact = new codepipeline.Artifact();
- 
+    const repo= new codecommit.Repository(this, 'cdkpipeline', {
+      repositoryName: "cdkpipeline"
+    });
     const pipeline = new CdkPipeline(this, 'Pipeline', {
       // The pipeline name
       pipelineName: 'MyServicePipeline',
       cloudAssemblyArtifact,
-
+      
       // Where the source can be found
-      sourceAction: new codepipeline_actions.GitHubSourceAction({
-        actionName: 'GitHub',
+      sourceAction: new codepipeline_actions.CodeCommitSourceAction({
+        actionName: 'CodeCommit',
         output: sourceArtifact,
-        oauthToken: SecretValue.secretsManager('a7d87d67d734a9e0042e7d961f7793939eb45f7a'),
-       
-        trigger: codepipeline_actions.GitHubTrigger.POLL,
-        owner: 'komalda',
-        repo: 'cdkpipeline-demo',
+        repository : repo
       }),
        // How it will be built and synthesized
        synthAction: SimpleSynthAction.standardNpmSynth({
