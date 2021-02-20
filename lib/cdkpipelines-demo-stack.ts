@@ -18,6 +18,24 @@ export class CdkpipelinesDemoStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
     
+   
+    // The Lambda function that contains the functionality
+    const handler = new lambda.Function(this, 'Lambda', {
+      runtime: lambda.Runtime.NODEJS_12_X,
+      handler: 'handler.handler',
+      code: lambda.Code.fromAsset(path.resolve(__dirname, 'lambda')),
+    });
+
+    // An API Gateway to make the Lambda web-accessible
+    const gw = new apigw.LambdaRestApi(this, 'Gateway', {
+      description: 'Endpoint for a simple Lambda-powered web service',
+      handler,
+    });
+
+    this.urlOutput = new CfnOutput(this, 'Url', {
+      value: gw.url,
+    });
+      
     const sourceArtifact = new codepipeline.Artifact();
     const cloudAssemblyArtifact = new codepipeline.Artifact();
  
@@ -45,21 +63,5 @@ export class CdkpipelinesDemoStack extends Stack {
        }),
     });
 
-    // The Lambda function that contains the functionality
-    const handler = new lambda.Function(this, 'Lambda', {
-      runtime: lambda.Runtime.NODEJS_12_X,
-      handler: 'handler.handler',
-      code: lambda.Code.fromAsset(path.resolve(__dirname, 'lambda')),
-    });
-
-    // An API Gateway to make the Lambda web-accessible
-    const gw = new apigw.LambdaRestApi(this, 'Gateway', {
-      description: 'Endpoint for a simple Lambda-powered web service',
-      handler,
-    });
-
-    this.urlOutput = new CfnOutput(this, 'Url', {
-      value: gw.url,
-    });
   }
 }
