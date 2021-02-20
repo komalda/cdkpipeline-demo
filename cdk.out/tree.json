@@ -324,7 +324,7 @@
                                   "Owner": "komalda",
                                   "Repo": "cdkpipeline-demo",
                                   "Branch": "master",
-                                  "OAuthToken": "{{resolve:secretsmanager:58dd3414e4869ee9325e5c7bfe7be7b75a810c35:SecretString:::}}",
+                                  "OAuthToken": "{{resolve:secretsmanager:8c1d7a6c36d35716d0176dfd3a1b6de6a13b75ef:SecretString:::}}",
                                   "PollForSourceChanges": true
                                 },
                                 "runOrder": 1

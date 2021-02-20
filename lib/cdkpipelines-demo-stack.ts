@@ -48,7 +48,7 @@ export class CdkpipelinesDemoStack extends Stack {
       sourceAction: new codepipeline_actions.GitHubSourceAction({
         actionName: 'GitHub',
         output: sourceArtifact,
-        oauthToken: SecretValue.secretsManager('8c1d7a6c36d35716d0176dfd3a1b6de6a13b75ef'),
+        oauthToken: SecretValue.secretsManager('a7d87d67d734a9e0042e7d961f7793939eb45f7a'),
        
         trigger: codepipeline_actions.GitHubTrigger.POLL,
         owner: 'komalda',
