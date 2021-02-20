@@ -210,11 +210,11 @@
                   "Version": "1"
                 },
                 "Configuration": {
-                  "Owner": "dastagirik@yahoo.com",
+                  "Owner": "komalda",
                   "Repo": "cdkpipeline-demo",
                   "Branch": "master",
-                  "OAuthToken": "{{resolve:secretsmanager:8b1b7ac675ea94298776679a006c3814dd3bf88c:SecretString:::}}",
-                  "PollForSourceChanges": false
+                  "OAuthToken": "{{resolve:secretsmanager:58dd3414e4869ee9325e5c7bfe7be7b75a810c35:SecretString:::}}",
+                  "PollForSourceChanges": true
                 },
                 "Name": "GitHub",
                 "OutputArtifacts": [
@@ -320,30 +320,6 @@
       ],
       "Metadata": {
         "aws:cdk:path": "CdkpipelinesDemoStack/Pipeline/Pipeline/Resource"
-      }
-    },
-    "PipelineSourceGitHubWebhookResource6A219987": {
-      "Type": "AWS::CodePipeline::Webhook",
-      "Properties": {
-        "Authentication": "GITHUB_HMAC",
-        "AuthenticationConfiguration": {
-          "SecretToken": "{{resolve:secretsmanager:8b1b7ac675ea94298776679a006c3814dd3bf88c:SecretString:::}}"
-        },
-        "Filters": [
-          {
-            "JsonPath": "$.ref",
-            "MatchEquals": "refs/heads/{Branch}"
-          }
-        ],
-        "TargetAction": "GitHub",
-        "TargetPipeline": {
-          "Ref": "Pipeline9850B417"
-        },
-        "TargetPipelineVersion": 1,
-        "RegisterWithThirdParty": true
-      },
-      "Metadata": {
-        "aws:cdk:path": "CdkpipelinesDemoStack/Pipeline/Pipeline/Source/GitHub/WebhookResource"
       }
     },
     "PipelineBuildSynthCodePipelineActionRole4E7A6C97": {

@@ -321,11 +321,11 @@
                                   "provider": "GitHub"
                                 },
                                 "configuration": {
-                                  "Owner": "dastagirik@yahoo.com",
+                                  "Owner": "komalda",
                                   "Repo": "cdkpipeline-demo",
                                   "Branch": "master",
-                                  "OAuthToken": "{{resolve:secretsmanager:8b1b7ac675ea94298776679a006c3814dd3bf88c:SecretString:::}}",
-                                  "PollForSourceChanges": false
+                                  "OAuthToken": "{{resolve:secretsmanager:58dd3414e4869ee9325e5c7bfe7be7b75a810c35:SecretString:::}}",
+                                  "PollForSourceChanges": true
                                 },
                                 "runOrder": 1
                               }
@@ -431,37 +431,6 @@
                       "GitHub": {
                         "id": "GitHub",
                         "path": "CdkpipelinesDemoStack/Pipeline/Pipeline/Source/GitHub",
-                        "children": {
-                          "WebhookResource": {
-                            "id": "WebhookResource",
-                            "path": "CdkpipelinesDemoStack/Pipeline/Pipeline/Source/GitHub/WebhookResource",
-                            "attributes": {
-                              "aws:cdk:cloudformation:type": "AWS::CodePipeline::Webhook",
-                              "aws:cdk:cloudformation:props": {
-                                "authentication": "GITHUB_HMAC",
-                                "authenticationConfiguration": {
-                                  "secretToken": "{{resolve:secretsmanager:8b1b7ac675ea94298776679a006c3814dd3bf88c:SecretString:::}}"
-                                },
-                                "filters": [
-                                  {
-                                    "jsonPath": "$.ref",
-                                    "matchEquals": "refs/heads/{Branch}"
-                                  }
-                                ],
-                                "targetAction": "GitHub",
-                                "targetPipeline": {
-                                  "Ref": "Pipeline9850B417"
-                                },
-                                "targetPipelineVersion": 1,
-                                "registerWithThirdParty": true
-                              }
-                            },
-                            "constructInfo": {
-                              "fqn": "@aws-cdk/aws-codepipeline.CfnWebhook",
-                              "version": "1.90.1"
-                            }
-                          }
-                        },
                         "constructInfo": {
                           "fqn": "@aws-cdk/core.Construct",
                           "version": "1.90.1"

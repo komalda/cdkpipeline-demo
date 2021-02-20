@@ -48,12 +48,11 @@ export class CdkpipelinesDemoStack extends Stack {
       sourceAction: new codepipeline_actions.GitHubSourceAction({
         actionName: 'GitHub',
         output: sourceArtifact,
-        oauthToken: SecretValue.secretsManager('82601e9a43ec5e01f7b1c4704397b8c6a4cd5dc3'),
+        oauthToken: SecretValue.secretsManager('58dd3414e4869ee9325e5c7bfe7be7b75a810c35'),
         trigger: codepipeline_actions.GitHubTrigger.POLL,
         owner: 'komalda',
         repo: 'cdkpipeline-demo',
       }),
-     
        // How it will be built and synthesized
        synthAction: SimpleSynthAction.standardNpmSynth({
          sourceArtifact,

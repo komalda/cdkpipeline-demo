@@ -22,7 +22,7 @@
         "templateFile": "CdkpipelinesDemoStack.template.json",
         "assumeRoleArn": "arn:${AWS::Partition}:iam::166129620984:role/cdk-hnb659fds-deploy-role-166129620984-eu-north-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::166129620984:role/cdk-hnb659fds-cfn-exec-role-166129620984-eu-north-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-166129620984-eu-north-1/488576b74e5eff6316209c969a52dcba5dc07cb4228135b8cf08f52271ae5f31.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-166129620984-eu-north-1/8cae737d79b899ab2f388c4ee22fd9154bde3636413481dbcc53fe51d2603b72.json",
         "requiresBootstrapStackVersion": 4,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -185,40 +185,6 @@
             "trace": [
               "new Pipeline (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:289:26)",
               "new CdkPipeline (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/pipelines/lib/pipeline.ts:163:24)",
-              "new CdkpipelinesDemoStack (/Users/z067919/git/cdkpipeline-demo/lib/cdkpipelines-demo-stack.ts:42:22)",
-              "Object.<anonymous> (/Users/z067919/git/cdkpipeline-demo/bin/cdkpipeline-demo.ts:7:1)",
-              "Module._compile (internal/modules/cjs/loader.js:1256:30)",
-              "Module.m._compile (/Users/z067919/git/cdkpipeline-demo/node_modules/ts-node/src/index.ts:1056:23)",
-              "Module._extensions..js (internal/modules/cjs/loader.js:1277:10)",
-              "Object.require.extensions.<computed> [as .ts] (/Users/z067919/git/cdkpipeline-demo/node_modules/ts-node/src/index.ts:1059:12)",
-              "Module.load (internal/modules/cjs/loader.js:1105:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:967:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
-              "main (/Users/z067919/git/cdkpipeline-demo/node_modules/ts-node/src/bin.ts:198:14)",
-              "Object.<anonymous> (/Users/z067919/git/cdkpipeline-demo/node_modules/ts-node/src/bin.ts:288:3)",
-              "Module._compile (internal/modules/cjs/loader.js:1256:30)",
-              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1277:10)",
-              "Module.load (internal/modules/cjs/loader.js:1105:32)",
-              "Function.Module._load (internal/modules/cjs/loader.js:967:14)",
-              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)",
-              "/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14"
-            ]
-          }
-        ],
-        "/CdkpipelinesDemoStack/Pipeline/Pipeline/Source/GitHub/WebhookResource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "PipelineSourceGitHubWebhookResource6A219987",
-            "trace": [
-              "GitHubSourceAction.bound (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline-actions/lib/github/source-action.ts:132:7)",
-              "GitHubSourceAction.bind (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline-actions/lib/action.ts:63:17)",
-              "RichAction.bind (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline/lib/private/rich-action.ts:30:24)",
-              "Pipeline._attachActionToPipeline (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:413:37)",
-              "Stage.attachActionToPipeline (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:141:27)",
-              "Stage.addAction (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:91:29)",
-              "new Stage (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline/lib/private/stage.ts:38:12)",
-              "Pipeline.addStage (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/aws-codepipeline/lib/pipeline.ts:336:19)",
-              "new CdkPipeline (/Users/z067919/git/cdkpipeline-demo/node_modules/@aws-cdk/pipelines/lib/pipeline.ts:182:22)",
               "new CdkpipelinesDemoStack (/Users/z067919/git/cdkpipeline-demo/lib/cdkpipelines-demo-stack.ts:42:22)",
               "Object.<anonymous> (/Users/z067919/git/cdkpipeline-demo/bin/cdkpipeline-demo.ts:7:1)",
               "Module._compile (internal/modules/cjs/loader.js:1256:30)",
