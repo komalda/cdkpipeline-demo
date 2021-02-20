@@ -210,7 +210,7 @@
                   "Version": "1"
                 },
                 "Configuration": {
-                  "Owner": "komalda",
+                  "Owner": "dastagirik@yahoo.com",
                   "Repo": "cdkpipeline-demo",
                   "Branch": "master",
                   "OAuthToken": "{{resolve:secretsmanager:8b1b7ac675ea94298776679a006c3814dd3bf88c:SecretString:::}}",
